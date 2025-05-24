@@ -1,7 +1,6 @@
-
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Heart, Target, Users, Shield } from 'lucide-react';
+import { Heart, Target, Users, Shield, BarChart3 } from 'lucide-react';
 
 const About = () => {
   return (
