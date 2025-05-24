@@ -66,7 +66,7 @@ const Analysis = () => {
             </p>
           </div>
 
-          {/* Embedded Canva Report */}
+          {/* Updated Canva Report */}
           <div className="relative rounded-xl overflow-hidden shadow-lg">
             <div style={{
               position: 'relative', 
@@ -102,7 +102,7 @@ const Analysis = () => {
 
           <div className="text-center mt-6">
             <a 
-              href="https://www.canva.com/design/DAGoAOvigA4/VCN4O9VEE1DeKJ-RUYD3jg/watch?utm_content=DAGoAOvigA4&utm_campaign=designshare&utm_medium=embeds&utm_source=link" 
+              href="https://www.canva.com/design/DAGoAOvigA4/VCN4O9VEE1DeKJ-RUYD3jg/watch" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 text-rose-600 hover:text-rose-800 font-medium transition-colors"
