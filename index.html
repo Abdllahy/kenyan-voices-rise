@@ -15,6 +15,55 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- Dialogflow Messenger -->
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <style>
+      df-messenger {
+        z-index: 999;
+        position: fixed;
+        --df-messenger-font-color: #000;
+        --df-messenger-font-family: Google Sans;
+        --df-messenger-chat-background: #f3f6fc;
+        --df-messenger-message-user-background: #d3e3fd;
+        --df-messenger-message-bot-background: #fff;
+        --df-messenger-chat-icon-size: 80px;
+        --df-messenger-chat-icon-margin: 20px;
+        --df-messenger-chat-icon-padding: 10px;
+        --df-messenger-chat-icon-border-radius: 50%;
+        --df-messenger-chat-icon-background: #fff;
+        --df-messenger-chat-icon-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        bottom: 24px;
+        right: 24px;
+      }
+
+      /* Custom chat icon */
+      df-messenger::part(chat-icon) {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e11d48"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>');
+        background-size: 60%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      /* Make chat window bigger */
+      df-messenger::part(chat-window) {
+        width: 400px;
+        height: 600px;
+        max-width: 90vw;
+        max-height: 80vh;
+      }
+
+      /* Style the chat bubble */
+      df-messenger::part(chat-bubble) {
+        background-color: #e11d48;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border-radius: 24px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+    </style>
   </head>
 
   <body>
@@ -22,5 +71,16 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Dialogflow Messenger Component -->
+    <df-messenger
+      project-id="build-with-ai-460808"
+      agent-id="7bf02467-9642-4873-8be0-27f845a91bf3"
+      language-code="en"
+      max-query-length="-1">
+      <df-messenger-chat-bubble
+        chat-title="femicide-bot">
+      </df-messenger-chat-bubble>
+    </df-messenger>
   </body>
 </html>
