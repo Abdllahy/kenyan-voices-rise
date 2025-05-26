@@ -46,8 +46,6 @@
         --df-messenger-chat-icon-border-radius: 50%;
         --df-messenger-chat-icon-background: #ffffff;
         --df-messenger-chat-icon-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-
-        /* Animation removed */
       }
 
       df-messenger::part(chat-icon) {
@@ -57,13 +55,11 @@
         background-repeat: no-repeat;
         border-radius: 50%;
         background-color: #ffffff;
-        /* Animation removed */
         transition: transform 0.4s ease-in-out;
       }
 
       df-messenger::part(chat-icon):hover {
         transform: scale(1.1) rotate(2deg);
-        /* Animation removed */
       }
 
       df-messenger::part(chat-window) {
@@ -143,9 +139,10 @@
 
     <!-- Dialogflow Messenger Component -->
     <df-messenger
-      project-id="build-with-ai-460808"
-      agent-id="7bf02467-9642-4873-8be0-27f845a91bf3"
+      project-id="my-project-ai-460811"
+      agent-id="dd8a4ddb-634a-4dd6-832c-06bdd44c5724"
       language-code="en"
+      max-query-length="-1"
     >
       <df-messenger-chat-bubble chat-title="Malaika AI">
       </df-messenger-chat-bubble>
