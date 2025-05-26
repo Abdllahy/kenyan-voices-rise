@@ -1,5 +1,4 @@
-
-import { Heart, Mail, Phone } from 'lucide-react';
+import { Heart, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -12,13 +11,16 @@ const Footer = () => {
               <span className="text-xl font-bold">Voices Unsilenced</span>
             </div>
             <p className="text-purple-200 leading-relaxed">
-              Dedicated to raising awareness about femicide in Kenya and supporting survivors. 
-              Together, we amplify voices and demand justice.
+              Dedicated to raising awareness about femicide in Kenya and
+              supporting survivors. Together, we amplify voices and demand
+              justice.
             </p>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-rose-300">Emergency Contacts</h3>
+            <h3 className="text-lg font-semibold mb-4 text-rose-300">
+              Emergency Contacts
+            </h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-rose-400" />
@@ -34,20 +36,23 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-rose-300">Remember</h3>
+            <h3 className="text-lg font-semibold mb-4 text-rose-300">
+              Remember
+            </h3>
             <blockquote className="text-purple-200 italic leading-relaxed">
-              "Every woman's voice matters. Every story deserves to be heard. 
+              "Every woman's voice matters. Every story deserves to be heard.
               Every life lost will not be forgotten."
             </blockquote>
           </div>
         </div>
-        
+
         <div className="border-t border-purple-700 mt-8 pt-6 text-center">
           <p className="text-purple-300">
             © 2024 Voices Unsilenced. Created with love to honor and remember.
           </p>
+          <p className="text-purple-300 mt-2">Created by Abdullahi Bashir</p>
         </div>
       </div>
     </footer>

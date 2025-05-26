@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,66 +10,135 @@
     <meta property="og:title" content="kenyan-voices-rise" />
     <meta property="og:description" content="Lovable Generated Project" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta
+      property="og:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta
+      name="twitter:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
 
     <!-- Dialogflow Messenger -->
-    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <link
+      rel="stylesheet"
+      href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css"
+    />
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+
     <style>
       df-messenger {
         z-index: 999;
         position: fixed;
+        bottom: 24px;
+        right: 24px;
+
         --df-messenger-font-color: #000;
         --df-messenger-font-family: Google Sans;
         --df-messenger-chat-background: #f3f6fc;
         --df-messenger-message-user-background: #d3e3fd;
-        --df-messenger-message-bot-background: #fff;
-        --df-messenger-chat-icon-size: 80px;
+        --df-messenger-message-bot-background: #ffffff;
+        --df-messenger-chat-icon-size: 72px;
         --df-messenger-chat-icon-margin: 20px;
-        --df-messenger-chat-icon-padding: 10px;
         --df-messenger-chat-icon-border-radius: 50%;
-        --df-messenger-chat-icon-background: #fff;
-        --df-messenger-chat-icon-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        bottom: 24px;
-        right: 24px;
+        --df-messenger-chat-icon-background: #ffffff;
+        --df-messenger-chat-icon-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+        /* Animation removed */
       }
 
-      /* Custom chat icon */
       df-messenger::part(chat-icon) {
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e11d48"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>');
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23000000" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6 2 11c0 1.75.57 3.39 1.54 4.76L2 22l6.38-2.68C9.22 19.77 10.59 20 12 20c5.52 0 10-4.03 10-9s-4.48-9-10-9zm-3 10c-.83 0-1.5-.67-1.5-1.5S8.17 9 9 9s1.5.67 1.5 1.5S9.83 12 9 12zm6 0c-.83 0-1.5-.67-1.5-1.5S14.17 9 15 9s1.5.67 1.5 1.5S15.83 12 15 12z"/></svg>');
         background-size: 60%;
         background-position: center;
         background-repeat: no-repeat;
+        border-radius: 50%;
+        background-color: #ffffff;
+        /* Animation removed */
+        transition: transform 0.4s ease-in-out;
       }
 
-      /* Make chat window bigger */
+      df-messenger::part(chat-icon):hover {
+        transform: scale(1.1) rotate(2deg);
+        /* Animation removed */
+      }
+
       df-messenger::part(chat-window) {
         width: 400px;
         height: 600px;
         max-width: 90vw;
         max-height: 80vh;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
       }
 
-      /* Style the chat bubble */
       df-messenger::part(chat-bubble) {
-        background-color: #e11d48;
+        background: linear-gradient(135deg, #ff4d6d, #e11d48);
         color: white;
         font-size: 16px;
         padding: 12px 24px;
         border-radius: 24px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      df-messenger::part(chat-bubble):hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(225, 29, 72, 0.4);
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        50% {
+          transform: scale(1.05);
+          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      @keyframes glow {
+        0% {
+          filter: drop-shadow(0 0 4px rgba(255, 75, 75, 0.5));
+        }
+        50% {
+          filter: drop-shadow(0 0 12px rgba(255, 75, 75, 0.8));
+        }
+        100% {
+          filter: drop-shadow(0 0 4px rgba(255, 75, 75, 0.5));
+        }
       }
     </style>
   </head>
 
   <body>
     <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+
+    <!-- GPT & Site Scripts (Leave as is) -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script src="https://api.tempo.new/proxy-asset?url=https://storage.googleapis.com/tempo-public-assets/error-handling.js"></script>
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- Dialogflow Messenger Component -->
@@ -77,9 +146,8 @@
       project-id="build-with-ai-460808"
       agent-id="7bf02467-9642-4873-8be0-27f845a91bf3"
       language-code="en"
-      max-query-length="-1">
-      <df-messenger-chat-bubble
-        chat-title="femicide-bot">
+    >
+      <df-messenger-chat-bubble chat-title="Malaika AI">
       </df-messenger-chat-bubble>
     </df-messenger>
   </body>
