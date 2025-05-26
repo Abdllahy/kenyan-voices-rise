@@ -1,73 +1,153 @@
-# Welcome to your Lovable project
+# 📍 Femicide in Kenya — A Data & AI-Powered Analysis (2016–2025)
 
-## Project info
+Welcome to the **Femicide in Kenya** End-to-End Analysis Project. This project combines **data storytelling**, **web scraping**, and **conversational AI** to document, track, and explain the femicide crisis in Kenya. As a data analyst and AI practitioner, I built tools to answer complex societal questions, raise awareness, and present facts in a structured, publicly accessible way.
 
-**URL**: https://lovable.dev/projects/94042864-9629-4607-beb8-d21b30cbf5bf
+---
 
-## How can I edit this code?
+## 📚 Table of Contents
 
-There are several ways of editing your application.
+- [🎯 Project Objectives](#-project-objectives)
+- [📘 Project Overview](#-project-overview)
+- [🔍 Key Findings](#-key-findings)
+- [🧰 Tools & Technologies](#-tools--technologies)
+- [📊 Dashboards](#-dashboards)
+- [🧾 Dataset](#-dataset)
+- [📄 Full Report](#-full-report)
+- [🧠 Future Enhancements](#-future-enhancements)
+- [📬 Connect with Me](#-connect-with-me)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/94042864-9629-4607-beb8-d21b30cbf5bf) and start prompting.
+## 🎯 Project Objectives
 
-Changes made via Lovable will be committed automatically to this repo.
+The primary goals of this project were to:
 
-**Use your preferred IDE**
+- Scrape and collect **femicide data** in Kenya from 2016 to 2025 using online news and reports.
+- Identify **patterns**, **triggers**, and **hotspot regions** for femicide cases.
+- Visualize femicide trends, media coverage, and judicial delays.
+- Deploy a **conversational AI agent** to answer questions about femicide in real-time.
+- Provide a **daily updated femicide tracker** on a custom-built website.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📘 Project Overview
 
-Follow these steps:
+Femicide — the gender-based killing of women — has become a critical crisis in Kenya, yet it lacks centralized and publicly accessible data. This project provides a multi-pronged approach:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Exploratory Data Analysis (EDA):** Cleaning and transforming over 900+ reported femicide cases from 2016–2025.
+- **Media Analysis:** Scraping and analyzing data from media outlets to evaluate coverage trends.
+- **Conversational Agent:** Built with Vertex AI Agent Builder to allow users to ask questions like "Which counties have the highest femicide rates?" or "How many women were killed in 2023?"
+- **Automation:** Auto-updating pipeline fetches new femicide stories daily and updates the website.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🔍 1. Exploratory Data Analysis (EDA)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### ✅ Data Cleaning
+- Removed duplicate entries from scraped news sources.
+- Standardized victim information (age, county, date, relationship to perpetrator).
+- Filled missing data based on contextual clues from articles.
 
-**Edit a file directly in GitHub**
+### 📊 Key Metrics Explored:
+- Yearly femicide counts (2016–2025).
+- County-wise distribution of femicide.
+- Relationship of victim to perpetrator.
+- Media coverage vs. actual reported deaths.
+- Delay in judicial processes per case.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## ❓ 2. Key Questions Answered
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- 🟣 **Which year recorded the highest femicide deaths in Kenya?**
+- 🟡 **Which counties are the most affected?**
+- 🔴 **What is the most common perpetrator relationship?**
+- 🔵 **What role does the media play in covering these cases?**
+- 🟠 **How long does it take to reach verdicts in femicide cases?**
+- 🟢 **How can we use AI to create early warning systems or alerts?**
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 📊 Dashboards
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Dashboards were developed using **Plotly**, **Matplotlib**, and **Recharts** (in the website version):
 
-## How can I deploy this project?
+- 🔥 Yearly Femicide Trends
+- 🗺️ County Distribution of Victims
+- 💔 Relationship of Victims to Offenders
+- ⏳ Verdict Delay per Case
+- 📰 Media Source Coverage and Bias
+- 📈 Victim Age & Location Patterns
 
-Simply open [Lovable](https://lovable.dev/projects/94042864-9629-4607-beb8-d21b30cbf5bf) and click on Share -> Publish.
+> Dashboards embedded in: [https://femicidekenya.vibe/](https://femicidekenya.vibe/) *(demo link)*
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🧰 Tools & Technologies
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+| Tool | Purpose |
+|------|---------|
+| `Python` | Data collection, cleaning, analysis |
+| `Pandas` | DataFrame manipulation |
+| `SnScrape / BeautifulSoup` | News & social media scraping |
+| `SQL` | Filtering and querying structured data |
+| `Vertex AI Agent Builder` | Conversational interface |
+| `Vibe-Coded Website` | Public dashboard and tracker |
+| `GitHub Actions` | Automating daily data pipeline |
+| `Canva` | Designing the visual report |
+| `Google Cloud Run` | Hosting AI agent backend |
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+## 🔍 Key Findings
+
+- 📉 Over **930+ femicide deaths** from **2016 to 2024**.
+- 🚨 2024 had the **highest cases ever recorded**.
+- 📍 **Nairobi, Nakuru, and Kisumu** are the most affected counties.
+- 💔 Majority of victims were killed by **intimate partners**.
+- 🕒 Judicial delays exceed **8+ years** in some cases.
+- 🧠 The public lacks consistent access to femicide data.
+
+---
+
+## 📄 Full Report
+
+A full, visually rich report analyzing trends, statistics, and causes of femicide in Kenya — including media bias, government response, and judicial action — is hosted here:
+
+📘 [Read Full Femicide Analysis on Hashnode](https://abdullahybashir.hashnode.dev/femicide-crisis-in-kenya)  
+📰 [Subscribe on Substack](https://yourusername.substack.com)
+
+---
+
+## 🧾 Dataset
+
+Most of the data was scraped or compiled manually from news reports, court databases, and nonprofit records:
+
+- Femicide Africa Uncensored  
+- Nation Africa  
+- The Standard  
+- Citizen TV  
+- Missing Voices KE  
+
+📂 [Download Dataset on GitHub](https://github.com/Abdllahy/femicide-kenya-analysis)
+
+---
+
+## 🧠 Future Enhancements
+
+- Integrate **AI classification** for article vetting.
+- Build **SMS/WhatsApp bot** for community updates.
+- Collaborate with human rights groups for **case validation**.
+- Add **timeline visualizations** and map-based dashboards.
+
+---
+
+## 📬 Connect with Me
+
+- 💻 [GitHub: Abdllahy](https://github.com/Abdllahy)
+- 📰 [Hashnode](https://abdullahybashir.hashnode.dev)
+- 📩 [Substack](https://yourusername.substack.com)
+- 📸 [Instagram](https://instagram.com/abdullahybashir)
+- 🧠 [LinkedIn](https://linkedin.com/in/abdullahybashir)
+
+> **Built by Abdullahi Bashir** — A data & AI initiative to track and combat gender-based violence in Kenya through technology, evidence, and awareness.
