@@ -2,7 +2,6 @@
 
 Welcome to the **Femicide in Kenya** End-to-End Analysis Project. This project combines **data storytelling**, **web scraping**, and **conversational AI** to document, track, and explain the femicide crisis in Kenya. As a data analyst and AI practitioner, I built tools to answer complex societal questions, raise awareness, and present facts in a structured, publicly accessible way.
 
----
 
 ## 📚 Table of Contents
 
