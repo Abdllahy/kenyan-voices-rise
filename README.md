@@ -1,9 +1,9 @@
-# 📍 Femicide in Kenya — A Data & AI-Powered Analysis (2016–2025)
+# Femicide in Kenya — A Data & AI-Powered Analysis (2016–2025)
 
 Welcome to the **Femicide in Kenya** End-to-End Analysis Project. This project combines **data storytelling**, **web scraping**, and **conversational AI** to document, track, and explain the femicide crisis in Kenya. As a data analyst and AI practitioner, I built tools to answer complex societal questions, raise awareness, and present facts in a structured, publicly accessible way.
 
 
-## 📚 Table of Contents
+## Table of Contents
 
 - [🎯 Project Objectives](#-project-objectives)
 - [📘 Project Overview](#-project-overview)
@@ -17,7 +17,7 @@ Welcome to the **Femicide in Kenya** End-to-End Analysis Project. This project c
 
 ---
 
-## 🎯 Project Objectives
+## Project Objectives
 
 The primary goals of this project were to:
 
@@ -29,7 +29,7 @@ The primary goals of this project were to:
 
 ---
 
-## 📘 Project Overview
+## Project Overview
 
 Femicide — the gender-based killing of women — has become a critical crisis in Kenya, yet it lacks centralized and publicly accessible data. This project provides a multi-pronged approach:
 
@@ -40,14 +40,14 @@ Femicide — the gender-based killing of women — has become a critical crisis 
 
 ---
 
-## 🔍 1. Exploratory Data Analysis (EDA)
+## 1. Exploratory Data Analysis (EDA)
 
-### ✅ Data Cleaning
+### Data Cleaning
 - Removed duplicate entries from scraped news sources.
 - Standardized victim information (age, county, date, relationship to perpetrator).
 - Filled missing data based on contextual clues from articles.
 
-### 📊 Key Metrics Explored:
+### Key Metrics Explored:
 - Yearly femicide counts (2016–2025).
 - County-wise distribution of femicide.
 - Relationship of victim to perpetrator.
@@ -56,33 +56,33 @@ Femicide — the gender-based killing of women — has become a critical crisis 
 
 ---
 
-## ❓ 2. Key Questions Answered
+## 2. Key Questions Answered
 
-- 🟣 **Which year recorded the highest femicide deaths in Kenya?**
-- 🟡 **Which counties are the most affected?**
-- 🔴 **What is the most common perpetrator relationship?**
-- 🔵 **What role does the media play in covering these cases?**
-- 🟠 **How long does it take to reach verdicts in femicide cases?**
-- 🟢 **How can we use AI to create early warning systems or alerts?**
+- **Which year recorded the highest femicide deaths in Kenya?**
+- **Which counties are the most affected?**
+- **What is the most common perpetrator relationship?**
+- **What role does the media play in covering these cases?**
+- **How long does it take to reach verdicts in femicide cases?**
+- **How can we use AI to create early warning systems or alerts?**
 
 ---
 
-## 📊 Dashboards
+## Dashboards
 
 Dashboards were developed using **Plotly**, **Matplotlib**, and **Recharts** (in the website version):
 
-- 🔥 Yearly Femicide Trends
-- 🗺️ County Distribution of Victims
-- 💔 Relationship of Victims to Offenders
-- ⏳ Verdict Delay per Case
-- 📰 Media Source Coverage and Bias
-- 📈 Victim Age & Location Patterns
+- Yearly Femicide Trends
+- County Distribution of Victims
+- Relationship of Victims to Offenders
+- Verdict Delay per Case
+- Media Source Coverage and Bias
+- Victim Age & Location Patterns
 
 > Dashboards embedded in: [https://femicidekenya.vibe/](https://femicidekenya.vibe/) *(demo link)*
 
 ---
 
-## 🧰 Tools & Technologies
+## Tools & Technologies
 
 | Tool | Purpose |
 |------|---------|
@@ -98,27 +98,27 @@ Dashboards were developed using **Plotly**, **Matplotlib**, and **Recharts** (in
 
 ---
 
-## 🔍 Key Findings
+## Key Findings
 
-- 📉 Over **930+ femicide deaths** from **2016 to 2024**.
-- 🚨 2024 had the **highest cases ever recorded**.
-- 📍 **Nairobi, Nakuru, and Kisumu** are the most affected counties.
-- 💔 Majority of victims were killed by **intimate partners**.
-- 🕒 Judicial delays exceed **8+ years** in some cases.
-- 🧠 The public lacks consistent access to femicide data.
+- Over **930+ femicide deaths** from **2016 to 2024**.
+- 2024 had the **highest cases ever recorded**.
+- **Nairobi, Nakuru, and Kisumu** are the most affected counties.
+- Majority of victims were killed by **intimate partners**.
+- Judicial delays exceed **8+ years** in some cases.
+- The public lacks consistent access to femicide data.
 
 ---
 
-## 📄 Full Report
+## Full Report
 
 A full, visually rich report analyzing trends, statistics, and causes of femicide in Kenya — including media bias, government response, and judicial action — is hosted here:
 
-📘 [Read Full Femicide Analysis on Hashnode](https://abdullahybashir.hashnode.dev/femicide-crisis-in-kenya)  
-📰 [Subscribe on Substack](https://yourusername.substack.com)
+[Read Full Femicide Analysis on Hashnode](https://abdullahybashir.hashnode.dev/femicide-crisis-in-kenya)  
+[Subscribe on Substack](https://yourusername.substack.com)
 
 ---
 
-## 🧾 Dataset
+## Dataset
 
 Most of the data was scraped or compiled manually from news reports, court databases, and nonprofit records:
 
@@ -128,11 +128,11 @@ Most of the data was scraped or compiled manually from news reports, court datab
 - Citizen TV  
 - Missing Voices KE  
 
-📂 [Download Dataset on GitHub](https://github.com/Abdllahy/femicide-kenya-analysis)
+[Download Dataset on GitHub](https://github.com/Abdllahy/femicide-kenya-analysis)
 
 ---
 
-## 🧠 Future Enhancements
+## Future Enhancements
 
 - Integrate **AI classification** for article vetting.
 - Build **SMS/WhatsApp bot** for community updates.
@@ -141,7 +141,7 @@ Most of the data was scraped or compiled manually from news reports, court datab
 
 ---
 
-## 📬 Connect with Me
+## Connect with Me
 
 - 💻 [GitHub: Abdllahy](https://github.com/Abdllahy)
 - 📰 [Hashnode](https://abdullahybashir.hashnode.dev)
