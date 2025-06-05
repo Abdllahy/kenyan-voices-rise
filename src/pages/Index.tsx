@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -62,16 +63,14 @@ const Index = () => {
 
             <FadeInSection delay={600}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://abyo.my.canva.site/chart-analysis"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/analysis"
                   className="inline-flex items-center space-x-3 bg-gradient-to-r from-rose-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-rose-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
                 >
                   <BarChart3 className="w-6 h-6" />
                   <span>View Analysis</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
                 <Link
                   to="/resources"
                   className="inline-flex items-center space-x-3 border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"

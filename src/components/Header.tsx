@@ -1,3 +1,4 @@
+
 import { Link, useLocation } from "react-router-dom";
 import { BarChart3, Info, BookOpen } from "lucide-react";
 import HeartBeatIcon from "./HeartBeatIcon";
@@ -53,6 +54,22 @@ const Header = () => {
                 interval={hoveredLink === "home" || isActive("/") ? 800 : 2000}
               />
               <span>Home</span>
+            </Link>
+
+            <Link
+              to="/analysis"
+              className={`flex items-center space-x-1 px-4 py-2 rounded-lg transition-all duration-300 ${
+                isActive("/analysis")
+                  ? "bg-rose-600 text-white shadow-lg"
+                  : "hover:bg-rose-700/50 hover:text-rose-200"
+              }`}
+              onMouseEnter={() => setHoveredLink("analysis")}
+              onMouseLeave={() => setHoveredLink(null)}
+            >
+              <BarChart3
+                className={`w-4 h-4 ${hoveredLink === "analysis" ? "animate-bounce-gentle" : ""}`}
+              />
+              <span>Analysis</span>
             </Link>
 
             <Link
