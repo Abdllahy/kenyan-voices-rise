@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -153,12 +152,6 @@ const Index = () => {
                     <div
                       key={i}
                       className="absolute animate-float"
-                      style={{
-                        top: `${Math.random() * 100}%`,
-                        left: `${Math.random() * 100}%`,
-                        animationDuration: `${3 + Math.random() * 7}s`,
-                        animationDelay: `${Math.random() * 5}s`,
-                      }}
                     >
                       <Sparkles className="text-white/20 w-4 h-4" />
                     </div>
@@ -233,10 +226,6 @@ const Index = () => {
                       size={24}
                       className="absolute text-rose-400"
                       interval={2000 + i * 500}
-                      style={{
-                        top: `${Math.random() * 100}%`,
-                        left: `${Math.random() * 100}%`,
-                      }}
                     />
                   ))}
                 </div>
