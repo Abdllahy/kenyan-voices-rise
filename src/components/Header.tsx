@@ -1,15 +1,24 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { BarChart3, Info, BookOpen } from "lucide-react";
+import { BarChart3, Info, BookOpen, Menu, X } from "lucide-react";
 import HeartBeatIcon from "./HeartBeatIcon";
 import { useState } from "react";
 
 const Header = () => {
   const location = useLocation();
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const isActive = (path: string) => {
     return location.pathname === path;
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -26,6 +35,7 @@ const Header = () => {
             className="flex items-center space-x-2 text-2xl font-bold group"
             onMouseEnter={() => setHoveredLink("logo")}
             onMouseLeave={() => setHoveredLink(null)}
+            onClick={closeMobileMenu}
           >
             <HeartBeatIcon
               size={32}
@@ -38,6 +48,7 @@ const Header = () => {
             </span>
           </Link>
 
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link
               to="/"
@@ -104,7 +115,79 @@ const Header = () => {
               <span>Resources</span>
             </Link>
           </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 rounded-lg hover:bg-rose-700/50 transition-colors"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <nav className="md:hidden mt-4 pb-4 animate-slide-up">
+            <div className="flex flex-col space-y-2">
+              <Link
+                to="/"
+                className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
+                  isActive("/")
+                    ? "bg-rose-600 text-white shadow-lg"
+                    : "hover:bg-rose-700/50 hover:text-rose-200"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                <HeartBeatIcon size={16} interval={isActive("/") ? 800 : 2000} />
+                <span>Home</span>
+              </Link>
+
+              <Link
+                to="/analysis"
+                className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
+                  isActive("/analysis")
+                    ? "bg-rose-600 text-white shadow-lg"
+                    : "hover:bg-rose-700/50 hover:text-rose-200"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                <BarChart3 className="w-4 h-4" />
+                <span>Analysis</span>
+              </Link>
+
+              <Link
+                to="/about"
+                className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
+                  isActive("/about")
+                    ? "bg-rose-600 text-white shadow-lg"
+                    : "hover:bg-rose-700/50 hover:text-rose-200"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                <Info className="w-4 h-4" />
+                <span>About</span>
+              </Link>
+
+              <Link
+                to="/resources"
+                className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
+                  isActive("/resources")
+                    ? "bg-rose-600 text-white shadow-lg"
+                    : "hover:bg-rose-700/50 hover:text-rose-200"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                <BookOpen className="w-4 h-4" />
+                <span>Resources</span>
+              </Link>
+            </div>
+          </nav>
+        )}
       </div>
     </header>
   );
