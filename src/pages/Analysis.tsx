@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
@@ -37,7 +36,6 @@ const Analysis = () => {
 
       if (error) {
         console.error('Error fetching graphs:', error);
-        // Show fallback data if database fetch fails
         showFallbackGraphs();
         return;
       }
@@ -50,14 +48,34 @@ const Analysis = () => {
         return;
       }
 
-      // For now, use placeholder images since storage bucket doesn't exist yet
-      const graphsWithUrls = data.map(graph => ({
-        ...graph,
-        image_url: `https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center`
-      }));
+      // Get the actual storage URLs for the images
+      const graphsWithStorageUrls = await Promise.all(
+        data.map(async (graph) => {
+          try {
+            // Get the public URL from Supabase storage
+            const { data: urlData } = supabase.storage
+              .from('analysis-graphs')
+              .getPublicUrl(graph.image_url);
+            
+            console.log('Storage URL for', graph.image_url, ':', urlData.publicUrl);
+            
+            return {
+              ...graph,
+              image_url: urlData.publicUrl
+            };
+          } catch (error) {
+            console.error('Error getting storage URL for', graph.image_url, ':', error);
+            // Fallback to placeholder if storage URL fails
+            return {
+              ...graph,
+              image_url: `https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center`
+            };
+          }
+        })
+      );
 
-      console.log('Graphs with URLs:', graphsWithUrls);
-      setGraphs(graphsWithUrls);
+      console.log('Graphs with storage URLs:', graphsWithStorageUrls);
+      setGraphs(graphsWithStorageUrls);
     } catch (error) {
       console.error('Error:', error);
       showFallbackGraphs();
@@ -274,6 +292,9 @@ const Analysis = () => {
                         console.error('Error loading image:', graph.image_url);
                         // Fallback to a different placeholder if the current one fails
                         e.currentTarget.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center';
+                      }}
+                      onLoad={() => {
+                        console.log('Successfully loaded image:', graph.image_url);
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
