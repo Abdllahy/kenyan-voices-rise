@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import {
@@ -7,11 +8,16 @@ import {
   AlertTriangle,
   Shield,
   Sparkles,
+  Building2,
+  Users,
+  Scale,
 } from "lucide-react";
 import { useState } from "react";
 import FadeInSection from "@/components/FadeInSection";
 import ParallaxBackground from "@/components/ParallaxBackground";
 import HeartBeatIcon from "@/components/HeartBeatIcon";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const Resources = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -45,18 +51,24 @@ const Resources = () => {
       contact: "info@fidakenya.org",
       website: "https://fidakenya.org",
       services: "Legal aid, counseling, and advocacy for women's rights",
+      icon: Scale,
+      focus: "Legal Support",
     },
     {
       name: "Wangu Kanja Foundation",
-      contact: "info@wangukanja.org",
+      contact: "info@wangukanja.org", 
       website: "https://wangukanja.org",
       services: "Crime prevention and victim support",
+      icon: Shield,
+      focus: "Crime Prevention",
     },
     {
       name: "Centre for Rights Education and Awareness (CREAW)",
       contact: "creaw@creawkenya.org",
       website: "https://creawkenya.org",
       services: "Women's rights advocacy and education",
+      icon: Users,
+      focus: "Education & Advocacy",
     },
   ];
 
@@ -152,40 +164,63 @@ const Resources = () => {
 
           {/* Support Organizations */}
           <FadeInSection delay={400}>
-            <div className="bg-white rounded-2xl shadow-xl p-8 mb-12 border border-purple-100 hover:border-purple-200 transition-colors duration-300">
-              <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-                Support Organizations
-              </h2>
+            <div className="mb-12">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center space-x-3 mb-4">
+                  <Building2 className="w-8 h-8 text-purple-600" />
+                  <h2 className="text-3xl font-bold text-gray-800">
+                    Professional Support Organizations
+                  </h2>
+                </div>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  Trusted organizations providing specialized services and professional support
+                </p>
+              </div>
 
-              <div className="space-y-6">
+              <div className="grid gap-6 max-w-6xl mx-auto">
                 {supportOrganizations.map((org, index) => (
-                  <div
-                    key={index}
-                    className="bg-purple-50 rounded-lg p-6 border border-purple-200 hover:border-purple-300 transition-all duration-300 transform hover:scale-[1.01] hover:shadow-md"
-                  >
-                    <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                      {org.name}
-                    </h3>
-                    <div className="grid md:grid-cols-2 gap-4 mb-3">
-                      <div className="flex items-center space-x-2 group">
-                        <Mail className="w-4 h-4 text-purple-600 group-hover:scale-110 transition-transform" />
-                        <span className="text-gray-700">{org.contact}</span>
+                  <Card key={index} className="group hover:shadow-lg transition-all duration-300 transform hover:scale-[1.01] border-purple-100 hover:border-purple-200">
+                    <CardHeader className="pb-4">
+                      <div className="flex items-start justify-between">
+                        <div className="flex items-center space-x-4">
+                          <div className="p-3 bg-purple-100 rounded-lg group-hover:bg-purple-200 transition-colors duration-300">
+                            <org.icon className="w-6 h-6 text-purple-600" />
+                          </div>
+                          <div>
+                            <CardTitle className="text-xl text-gray-800 group-hover:text-purple-700 transition-colors duration-300">
+                              {org.name}
+                            </CardTitle>
+                            <CardDescription className="text-purple-600 font-medium text-sm mt-1">
+                              {org.focus}
+                            </CardDescription>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex items-center space-x-2 group">
-                        <ExternalLink className="w-4 h-4 text-purple-600 group-hover:scale-110 transition-transform" />
-                        <a
-                          href={org.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-purple-600 hover:text-purple-800 transition-colors relative inline-block"
+                    </CardHeader>
+                    
+                    <CardContent>
+                      <p className="text-gray-600 mb-6 leading-relaxed">
+                        {org.services}
+                      </p>
+                      
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex items-center space-x-2 text-gray-700 bg-gray-50 px-4 py-2 rounded-md flex-1">
+                          <Mail className="w-4 h-4 text-purple-600 flex-shrink-0" />
+                          <span className="text-sm truncate">{org.contact}</span>
+                        </div>
+                        
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="border-purple-200 text-purple-700 hover:bg-purple-50 hover:border-purple-300 transition-all duration-300"
+                          onClick={() => window.open(org.website, '_blank')}
                         >
+                          <ExternalLink className="w-4 h-4 mr-2" />
                           Visit Website
-                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300"></span>
-                        </a>
+                        </Button>
                       </div>
-                    </div>
-                    <p className="text-gray-600">{org.services}</p>
-                  </div>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>
