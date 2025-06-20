@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { BarChart3, Info, BookOpen, Menu, X } from "lucide-react";
+import { BarChart3, Info, BookOpen, Menu, X, Lightbulb } from "lucide-react";
 import HeartBeatIcon from "./HeartBeatIcon";
 import { useState } from "react";
 
@@ -84,6 +84,22 @@ const Header = () => {
             </Link>
 
             <Link
+              to="/solutions"
+              className={`flex items-center space-x-1 px-4 py-2 rounded-lg transition-all duration-300 ${
+                isActive("/solutions")
+                  ? "bg-rose-600 text-white shadow-lg"
+                  : "hover:bg-rose-700/50 hover:text-rose-200"
+              }`}
+              onMouseEnter={() => setHoveredLink("solutions")}
+              onMouseLeave={() => setHoveredLink(null)}
+            >
+              <Lightbulb
+                className={`w-4 h-4 ${hoveredLink === "solutions" ? "animate-bounce-gentle" : ""}`}
+              />
+              <span>Solutions</span>
+            </Link>
+
+            <Link
               to="/about"
               className={`flex items-center space-x-1 px-4 py-2 rounded-lg transition-all duration-300 ${
                 isActive("/about")
@@ -158,6 +174,19 @@ const Header = () => {
               >
                 <BarChart3 className="w-4 h-4" />
                 <span>Analysis</span>
+              </Link>
+
+              <Link
+                to="/solutions"
+                className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
+                  isActive("/solutions")
+                    ? "bg-rose-600 text-white shadow-lg"
+                    : "hover:bg-rose-700/50 hover:text-rose-200"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                <Lightbulb className="w-4 h-4" />
+                <span>Solutions</span>
               </Link>
 
               <Link

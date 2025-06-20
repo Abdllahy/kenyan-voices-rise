@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Analysis from "./pages/Analysis";
+import Solutions from "./pages/Solutions";
 import Resources from "./pages/Resources";
 import NotFound from "./pages/NotFound";
 // Import tempo routes
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/analysis" element={<Analysis />} />
+            <Route path="/solutions" element={<Solutions />} />
             <Route path="/resources" element={<Resources />} />
             {/* Allow Tempo to capture routes before the catchall */}
             {import.meta.env.VITE_TEMPO && <Route path="/tempobook/*" />}

@@ -72,7 +72,7 @@ const Analysis = () => {
           </div>
         </FadeInSection>
 
-        {/* Canva Embed */}
+        {/* First Canva Embed */}
         <FadeInSection delay={300}>
           <Card className="border-0 shadow-sm hover:shadow-lg transition-all duration-500 bg-white/90 backdrop-blur overflow-hidden">
             <CardContent className="p-0">
@@ -106,22 +106,50 @@ const Analysis = () => {
                   allow="fullscreen"
                 />
               </div>
-              <div className="p-4">
-                <a 
-                  href="https://www.canva.com/design/DAGqxn3ZxJI/2-2smOJSpah8AOdpxQbEzQ/view?utm_content=DAGqxn3ZxJI&utm_campaign=designshare&utm_medium=embeds&utm_source=link" 
-                  target="_blank" 
-                  rel="noopener"
-                  className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
-                >
-                  View full presentation →
-                </a>
+            </CardContent>
+          </Card>
+        </FadeInSection>
+
+        {/* Second Canva Embed */}
+        <FadeInSection delay={400}>
+          <Card className="border-0 shadow-sm hover:shadow-lg transition-all duration-500 bg-white/90 backdrop-blur overflow-hidden mt-16">
+            <CardContent className="p-0">
+              <div style={{
+                position: 'relative',
+                width: '100%',
+                height: 0,
+                paddingTop: '56.2500%',
+                paddingBottom: 0,
+                boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)',
+                marginTop: '1.6em',
+                marginBottom: '0.9em',
+                overflow: 'hidden',
+                borderRadius: '8px',
+                willChange: 'transform'
+              }}>
+                <iframe
+                  loading="lazy"
+                  style={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    top: 0,
+                    left: 0,
+                    border: 'none',
+                    padding: 0,
+                    margin: 0
+                  }}
+                  src="https://www.canva.com/design/DAGqx0xSTF4/GdtW_0W2riO4ls4AWXTqbg/view?embed"
+                  allowFullScreen
+                  allow="fullscreen"
+                />
               </div>
             </CardContent>
           </Card>
         </FadeInSection>
 
         {/* Call to Action */}
-        <FadeInSection delay={400}>
+        <FadeInSection delay={500}>
           <Card className="mt-16 border-0 shadow-sm bg-gradient-to-br from-gray-900 to-gray-800 text-white overflow-hidden">
             <CardContent className="p-8 sm:p-12 text-center relative">
               <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-purple-500/10"></div>
